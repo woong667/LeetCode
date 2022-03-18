@@ -24,7 +24,7 @@ public class Solution {
                         temp += s[i];
                     }
                    
-                   // stack.Push(s[i].ToString());
+                   
                 }
                 else // s[i]==')'
                 {
@@ -126,20 +126,6 @@ public class Solution {
                 result += realList[i];
             }
 
-           /* result += Int32.Parse(list[0]);
-            for(int i=1;i<list.Count-1;i+=2)
-            {
-                if(list[i]=="+")
-                {
-                    result += Int32.Parse(list[i + 1]);
-
-                }
-                else if(list[i]=="-")
-                {
-                    result -= Int32.Parse(list[i + 1]);
-                }
-            
-            }*/
             return result;
         }
 }
