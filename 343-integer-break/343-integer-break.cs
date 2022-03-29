@@ -17,28 +17,10 @@ public class Solution {
                 right = i-2;
                 while(left<=right)
                 {
-                    if(left>dic[left])
-                    {
-                        result *= left;
-                    }
-                    else
-                    {
-                        result *= dic[left];
-                    }
-
-                    if(right>dic[right])
-                    {
-                        result *= right;
-                    }
-                    else
-                    {
-                        result *= dic[right];
-                    }
-
-                    if(maxResult<result)
-                    {
-                        maxResult = result;
-                    }
+               
+                    result = result * (left > dic[left] ? left : dic[left]);
+                    result = result * (right > dic[right] ? right : dic[right]);
+                    maxResult = maxResult < result ? result : maxResult;
 
                     result = 1;
                     left++;
