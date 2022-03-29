@@ -8,9 +8,8 @@ public class Solution {
             
             dic[2] = 1;
             dic[3] = 2;
-            dic[4] = 4;
 
-            for(int i=5;i<=58;i++)
+            for(int i=4;i<=58;i++)
             {
                 result = 1;
                 maxResult = -1;
