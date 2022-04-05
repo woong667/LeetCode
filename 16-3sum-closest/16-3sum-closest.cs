@@ -1,26 +1,32 @@
 public class Solution {
     public int ThreeSumClosest(int[] nums, int target) {
-       int result = 0;
-            int minResult=0;
-            int tempGap;
-            int minGap=2001;
+        
+           int sum = 0;
+            int result = 100000;
+            int n = nums.Length-1;
+            Array.Sort(nums, (x, y) => x.CompareTo(y));
             for(int i=0;i<nums.Length-2;i++)
             {
-                for(int j=i+1;j<nums.Length-1;j++)
+                int left = i + 1;
+                int right = n;
+                while(left<right)
                 {
-                    for(int k=j+1;k<nums.Length;k++)
+                    sum = nums[i] + nums[left] + nums[right];
+                    if (sum == target)
+                        return target;
+
+                    if(Math.Abs(target-result)>Math.Abs(target-sum))
                     {
-                        result = nums[i] + nums[j] + nums[k];
-                        tempGap = target - result;
-                        tempGap = tempGap < 0 ? ~tempGap + 1 : tempGap;
-                        if(minGap>tempGap)
-                        {
-                            minGap = tempGap;
-                            minResult = result;
-                        }
+                        result = sum;
                     }
+
+                    if (sum > target) right--;
+                    else left++;
+
+
                 }
+
             }
-            return minResult;
+            return result;
     }
 }
